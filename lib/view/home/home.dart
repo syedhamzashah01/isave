@@ -97,24 +97,49 @@ class Home extends StatelessWidget {
   const SizedBox(height: 20),
 
   // Seasonal Offers section
-  const Text(
-  "Seasonal offers",
-  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+  Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+          "Seasonal offers",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const Text("Limited period offer",
+              style: TextStyle(color: Colors.grey, fontSize: 12)),
+        ],
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(0,0, 20, 0),
+        child: Container(
+          height: 30,
+          width: 70,
+          decoration: BoxDecoration(
+           color: Colors.white,
+            border: Border.all(),
+            borderRadius: BorderRadius.circular(20)
+          ),
+          child: Center(child: Text('View all')),
+        ),
+      )
+    ],
   ),
-  const Text("Limited period offer",
-  style: TextStyle(color: Colors.grey, fontSize: 12)),
+
   const SizedBox(height: 20),
 
   SizedBox(
-  height: 240,
+  height: 250,
   child: ListView(
   scrollDirection: Axis.horizontal,
   children: [
   offerCard("Mazaya App", "Worldwide",
   "Please Read the description",
       "assets/mazaya.jpg"),
-  offerCard("Canadian Medical Center",
-  "UAE, Abu Dhabi", "Teeth Cleanin AED 99 Plus VAT",
+  offerCard("Canadian Medical\nCenter",
+  "UAE, Abu Dhabi", "Teeth Cleanin AED 99 Plus\nVAT",
       "assets/cmc.jpg"),
   offerCard("Fazaa", "UAE", "Exclusive benefits", "assets/faza.jpg"),
   ],
