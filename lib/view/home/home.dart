@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:isave/view/home/home_screen.dart';
+import 'package:isave/view/search/search_screen.dart';
 import 'package:isave/widget/offcard_widget.dart';
 
 import '../../widget/category_widget.dart' show categoryItem;
@@ -22,7 +25,9 @@ class Home extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.search, color: Colors.black87),
-            onPressed: () {},
+            onPressed: () {
+              Get.off(SearchScreen());
+            },
           ),
           IconButton(
             icon: const Icon(Icons.mail_outline, color: Colors.black87),

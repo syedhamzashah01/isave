@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Icon(Icons.search), label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.feedback_outlined), label: "Feedback"),
+              icon: Icon(Icons.credit_card), label: "e-card"),
         ],
       ),
     ));

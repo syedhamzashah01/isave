@@ -90,95 +90,6 @@ class ECardView extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-
-                children: const [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.diamond_outlined,
-                        color: Colors.white,
-                        size: 18,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        'iSave',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 60),
-                  // Text('Staff ID', style: TextStyle(color: Colors.white70, fontSize: 14)),
-                  SizedBox(height: 5),
-                  SizedBox(height: 5),
-                  Text(
-                    'Spouse Name',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    'Alicia Fiedler',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            // Right column
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const Text(
-                  'ETIHAD',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: 8),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // 🔹 BACK SIDE (shows details)
-  Widget _buildBackECard(BuildContext context, double maxWidth) {
-    const cardHeight = 200.0;
-    return SizedBox(
-      height: cardHeight,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFF2B2473), Color(0xFF241B5A)],
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.08),
-              blurRadius: 10,
-              offset: const Offset(0, 6),
-            ),
-          ],
-        ),
-        padding: const EdgeInsets.all(18),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Left content
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Row(
@@ -246,7 +157,7 @@ class ECardView extends StatelessWidget {
                     border: Border.all(color: Colors.white24, width: 1),
                     image: const DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(''), // <-- put your image here
+                      image: AssetImage('assets/pic.jpg'), // <-- put your image here
                     ),
                   ),
                 ),
@@ -257,6 +168,98 @@ class ECardView extends StatelessWidget {
       ),
     );
   }}
+
+
+  // 🔹 BACK SIDE (shows details)
+
+Widget _buildBackECard(BuildContext context, double maxWidth) {
+  const cardHeight = 200.0;
+  return SizedBox(
+    height: cardHeight,
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF2B2473), Color(0xFF241B5A)],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 10,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      padding: const EdgeInsets.all(18),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // Left content
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: const [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.diamond_outlined,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      'iSave',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 60),
+                // Text('Staff ID', style: TextStyle(color: Colors.white70, fontSize: 14)),
+                SizedBox(height: 5),
+                SizedBox(height: 5),
+                Text(
+                  'Spouse Name',
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  'Alicia Fiedler',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Right column
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const Text(
+                'ETIHAD',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 8),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
 
 //   Widget _buildDisclaimerCard() {
 //     return Card(
